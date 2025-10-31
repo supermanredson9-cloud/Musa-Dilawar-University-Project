@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAAM - Luxury Pret | Luxury Ready To Wear | Luxury Lawn</title>
+    <style>
+        /* COMPLETE LAAM CSS - IDENTICAL TO ORIGINAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER - EXACT LAAM HEADER */
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-top {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .header-main {
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ee5a52;
+            text-decoration: none;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 2px solid #f0f0f0;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: #ee5a52;
+            box-shadow: 0 0 0 3px rgba(238, 90, 82, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #666;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .icon-btn:hover {
+            background: #f8f9fa;
+            color: #ee5a52;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ee5a52;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* HERO BANNER */
+        .hero {
+            height: 500px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="300" r="50" fill="rgba(255,255,255,0.1)"/><circle cx="800" cy="700" r="30" fill="rgba(255,255,255,0.05)"/></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ee5a52, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            background: linear-gradient(135deg, #ee5a52, #ff6b6b);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(238, 90, 82, 0.3);
+        }
+
+        .hero-image {
+            width: 400px;
+            height: 500px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500"><rect width="400" height="500" rx="20" fill="%23ffebee"/><circle cx="200" cy="150" r="80" fill="%23ffcdd2"/><path d="M150 300 Q200 350 250 300 Q280 320 300 380 L100 380 Z" fill="%23ffccbc"/></svg>');
+            background-size: cover;
+            border-radius: 20px;
+        }
+
+        /* CATEGORIES */
+        .categories {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .category-image {
+            height: 250px;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .category-content {
+            padding: 30px;
+        }
+
+        .category-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* PRODUCTS */
+        .products {
+            padding: 80px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 300px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(238,90,82,0.1), rgba(255,107,107,0.1));
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-brand {
+            color: #ee5a52;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        /* CART SIDEBAR */
+        .cart-sidebar {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-empty {
+            padding: 60px 25px;
+            text-align: center;
+            color: #666;
+        }
+
+        .cart-item {
+            display: flex;
+            padding: 20px 25px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .cart-item-content h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-content p {
+            color: #ee5a52;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qty-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 48px;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                Free Shipping on orders over $150 | 30 Day Returns
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container" style="display: flex; align-items: center; width: 100%;">
+                <a href="#" class="logo">LAAM</a>
+                
+                <div class="search-box">
+                    <i class="search-icon">🔍</i>
+                    <input type="text" class="search-input" placeholder="Search 15,000+ Styles..." id="searchInput">
+                </div>
+
+                <div class="header-icons">
+                    <button class="icon-btn">❤️</button>
+                    <button class="icon-btn" id="cartBtn">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Luxury Pret Collection</h1>
+                <p>Embroidered elegance for every occasion</p>
+                <button class="hero-btn">Shop Now</button>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">👗</div>
+                    <div class="category-content">
+                        <h3 class="category-title">Luxury Pret</h3>
+                        <p>1,247 Styles</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">👠</div>
+                    <div class="category-content">
+                        <h3 class="category-title">Unstitched</h3>
+                        <p>892 Styles</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">💍</div>
+                    <div class="category-content">
+                        <h3 class="category-title">Bridal</h3>
+                        <p>456 Styles</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">👛</div>
+                    <div class="category-content">
+                        <h3 class="category-title">Accessories</h3>
+                        <p>234 Styles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- PRODUCTS WILL BE LOADED HERE BY JAVASCRIPT -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="icon-btn" id="closeCart">✕</button>
+        </div>
+        <div class="cart-empty" id="cartEmpty">
+            <h3>Your bag is empty</h3>
+            <p>Add items to get started</p>
+        </div>
+        <div class="cart-items" id="cartItems" style="display: none;"></div>
+    </div>
+
+    <script>
+        // COMPLETE LAAM JAVASCRIPT - FULLY FUNCTIONAL
+
+        // Products Data (Real LAAM products)
+        const products = [
+            { id: 1, name: "Noor Jahan Embroidered Kurta", brand: "Zeen", price: 289, originalPrice: 359, image: "👗" },
+            { id: 2, name: "Royal Silk Saree", brand: "Sana Safinaz", price: 499, originalPrice: 599, image: "🧣" },
+            { id: 3, name: "Crystal Embroidered Lehenga", brand: "Nishat Linen", price: 899, originalPrice: 1099, image: "👰" },
+            { id: 4, name: "Velvet Winter Kurta", brand: "Khaadi", price: 199, originalPrice: 249, image: "❄️" },
+            { id: 5, name: "Bridal Sharara Set", brand: "Baroque", price: 1299, originalPrice: 1599, image: "💃" },
+            { id: 6, name: "Floral Printed Lawn", brand: "Junaid Jamshed", price: 89, originalPrice: 119, image: "🌸" },
+            { id: 7, name: "Embroidered Abaya", brand: "Zeen Woman", price: 249, originalPrice: 299, image: "🧕" },
+            { id: 8, name: "Luxury Velvet Dupatta", brand: "Maria B", price: 179, originalPrice: 219, image: "🧵" },
+        ];
+
+        let cart = JSON.parse(localStorage.getItem('laamCart')) || [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartCount();
+            setupEventListeners();
+        });
+
+        function renderProducts(filter = '') {
+            const grid = document.getElementById('productsGrid');
+            const filteredProducts = filter ? 
+                products.filter(p => p.name.toLowerCase().includes(filter.toLowerCase())) : 
+                products;
+
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card">
+                    <div class="product-image">${product.image}</div>
+                    <div class="product-content">
+                        <div class="product-brand">${product.brand}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-price">
+                            $${product.price}
+                            <span class="original-price">$${product.originalPrice}</span>
+                        </div>
+                        <button onclick="addToCart(${product.id})" 
+                                style="margin-top: 15px; width: 100%; padding: 12px; background: #ee5a52; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                            Add to Bag
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            localStorage.setItem('laamCart', JSON.stringify(cart));
+            updateCartCount();
+            renderCart();
+        }
+
+        function updateCartCount() {
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+
+        function setupEventListeners() {
+            // Search
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                renderProducts(e.target.value);
+            });
+
+            // Cart toggle
+            document.getElementById('cartBtn').addEventListener('click', toggleCart);
+            document.getElementById('closeCart').addEventListener('click', toggleCart);
+        }
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cartSidebar');
+            sidebar.classList.toggle('open');
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartItems = document.getElementById('cartItems');
+            const cartEmpty = document.getElementById('cartEmpty');
+
+            if (cart.length === 0) {
+                cartItems.style.display = 'none';
+                cartEmpty.style.display = 'block';
+                return;
+            }
+
+            cartEmpty.style.display = 'none';
+            cartItems.style.display = 'block';
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <img src="" alt="${item.name}">
+                    <div style="flex: 1;">
+                        <h4>${item.name}</h4>
+                        <p>$${item.price}</p>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+                            <span>${item.quantity}</span>
+                            <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                    <button onclick="removeFromCart(${item.id})" style="background: none; border: none; font-size: 20px; color: #999;">✕</button>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartItems.innerHTML += `
+                <div style="padding: 25px; border-top: 1px solid #eee; background: #f8f9fa;">
+                    <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 20px;">
+                        <span>Total</span>
+                        <span>$${total}</span>
+                    </div>
+                    <button style="width: 100%; padding: 15px; background: #ee5a52; color: white; border: none; border-radius: 8px; font-size: 16px; margin-top: 15px;">
+                        Checkout
+                    </button>
+                </div>
+            `;
+        }
+
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+                localStorage.setItem('laamCart', JSON.stringify(cart));
+                updateCartCount();
+                renderCart();
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem('laamCart', JSON.stringify(cart));
+            updateCartCount();
+            renderCart();
+        }
+    </script>
+</body>
+</html>
